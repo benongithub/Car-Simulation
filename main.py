@@ -47,7 +47,11 @@ def draw_environment(car):
     :type car: Car
     """
     game_display.fill(BLACK)
+
+    # Draw Car with fixed Dimensions
     pygame.draw.rect(game_display, WHITE, [int(car.x), int(car.y), 50, 20], 2)
+    # TODO: Rotate Car to Orientation
+    # TODO: Add Vector to Steer
     pygame.display.update()
 
 
