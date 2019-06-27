@@ -1,4 +1,4 @@
-# Car-Simulation
+# Car-Simulation [![Build Status](https://travis-ci.com/benongithub/Car-Simulation.svg?branch=master)](https://travis-ci.com/benongithub/Car-Simulation)
 Simulate a Car and letting it drive in a PyGame environment.
 
 ## TODOs
