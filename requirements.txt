@@ -4,3 +4,5 @@ pygame
 pandas
 jupyter
 pytest
+pytest-cov
+coveralls
