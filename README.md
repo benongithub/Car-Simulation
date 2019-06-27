@@ -1,4 +1,4 @@
-# Car-Simulation [![Build Status](https://travis-ci.com/benongithub/Car-Simulation.svg?branch=master)](https://travis-ci.com/benongithub/Car-Simulation)
+# Car-Simulation [![Build Status](https://travis-ci.com/benongithub/Car-Simulation.svg?branch=master)](https://travis-ci.com/benongithub/Car-Simulation) [![Coverage Status](https://coveralls.io/repos/github/benongithub/Car-Simulation/badge.svg?branch=master)](https://coveralls.io/github/benongithub/Car-Simulation?branch=master)
 Simulate a Car and letting it drive in a PyGame environment.
 
 ## TODOs
