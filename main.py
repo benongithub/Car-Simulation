@@ -2,7 +2,10 @@ import pygame
 import time as time
 import pandas as pd
 
-from models.simple_car import SimpleCar
+import models
+
+from models.rectangle import Rectangle
+
 
 # Colors used for drawing with PyGame
 WIDTH = 1280
@@ -37,7 +40,7 @@ def save_car_position(tm, x_pos, y_pos):
     df.to_csv("data/" + file_name)
 
 
-def draw_environment(car):
+def draw_environment(car, rot = 0):
     """Draw the Environment
     Filling the Background with black color.
     Adding a Rectangle which represents the car.
@@ -47,9 +50,14 @@ def draw_environment(car):
     :type car: Car
     """
     game_display.fill(BLACK)
-
+    re = Rectangle(200, 200, 100, 50)
+    re.rotate(rot)
+    re.move(int(car.x,), int(car.y))
+    pygame.draw.polygon(game_display, WHITE, re.get_point_list(), 5)
+    # print(re.get_point_list())
     # Draw Car with fixed Dimensions
-    pygame.draw.rect(game_display, WHITE, [int(car.x), int(car.y), 50, 20], 2)
+    # pygame.draw.rect(game_display, WHITE, [int(car.x), int(car.y), 50, 20], 2)
+
     # TODO: Rotate Car to Orientation
     # TODO: Add Vector to Steer
     pygame.display.update()
@@ -65,13 +73,15 @@ def main():
     :return:
     """
     STOP = False
-    my_car = SimpleCar()
+    my_car = models.SimpleRotationCar()
 
     time_begin = time.time()
 
     t = []
     x = []
     y = []
+
+    rot = 0
 
     while not STOP:
         try:
@@ -90,8 +100,8 @@ def main():
                     if event.key == pygame.K_SPACE:
                         my_car.pause = False
 
-            draw_environment(my_car)
-
+            draw_environment(my_car, rot)
+            rot = rot + 1
             clock.tick(60)
 
             t.append(time.time() - time_begin)

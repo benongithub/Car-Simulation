@@ -3,3 +3,4 @@ numpy
 pygame
 pandas
 jupyter
+pytest
